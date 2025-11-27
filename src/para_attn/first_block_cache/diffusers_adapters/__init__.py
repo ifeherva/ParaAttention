@@ -31,6 +31,8 @@ def apply_cache_on_pipe(pipe: DiffusionPipeline, *args, **kwargs):
     pipe_cls_name = pipe.__class__.__name__
     if False:
         pass
+    elif pipe_cls_name.startswith("Flux2"):
+        adapter_name = "flux2"
     elif pipe_cls_name.startswith("Flux"):
         adapter_name = "flux"
     elif pipe_cls_name.startswith("Mochi"):
